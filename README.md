@@ -18,6 +18,35 @@ bugs (bug_id, description, category_id, assigned_to, status, created_date, resol
 categories (category_id, category_name)
 developers (developer_id, name, email)
 
+create database BugTrackingSystem;
+
+USE BugTrackingSystem;
+
+CREATE TABLE categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE developers (
+    developer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE bugs (
+    bug_id INT AUTO_INCREMENT PRIMARY KEY,
+    description TEXT NOT NULL,
+    category_id INT,
+    assigned_to INT,
+    status VARCHAR(20) NOT NULL,
+    created_date DATETIME NOT NULL,
+    resolved_date DATETIME,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id),
+    FOREIGN KEY (assigned_to) REFERENCES developers(developer_id)
+);
+
+
+
 **model**
 model for objects (attributes, constructors, getters, setters & .toString())
 **dao**
