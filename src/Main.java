@@ -27,7 +27,7 @@ public class Main {
             System.out.println("6. Update Developer");
             System.out.println("7. Delete Developer");
             System.out.println("8. List All Developers");
-            System.out.println("10. Add Bug");
+            System.out.println("9. Add Bug");
             System.out.println("10. Update Bug");
             System.out.println("11. Delete Bug");
             System.out.println("12. List All Bugs");
